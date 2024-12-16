@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.type }}</td>
+        <td>{{ transaction.category }}</td>
+        <td>{{ transaction.amount | currency }}</td>
+        <td>{{ transaction.date | date }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteTransaction(transaction.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
